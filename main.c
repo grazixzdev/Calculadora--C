@@ -16,6 +16,8 @@ int main()
            "\n| 5 - Exponenciação\n| 6 - Raiz Quadrada\n| 7 - Raiz Cúbica"
            "\n| 8 - Cosseno\n| 9 - Seno\n| 10 - Tangente"
            "\n| 11 - Logaritmo na Base 10\n| 12 - Logaritmo Natural\n| 13 - Constante de Euler"
+           "\n| 14 - Arco-Cosseno\n| 15 - Arco-Seno\n| 16 - Arco-Tangente"
+           "\n| 17 - Hipotenusa"
            "\n| 0 - Sair"
            "\n| Digite sua escolha:\n");
         scanf("%d", &escolha);
@@ -24,7 +26,7 @@ int main()
             printf("\nDigite o primeiro número:\n");
             scanf("%f", &num1);
             
-            if (escolha < 6) {
+            if (escolha < 6 || escolha == 17) {
                 printf("Digite o segundo número:\n");
                 scanf("%f", &num2);
             }
@@ -96,6 +98,21 @@ int main()
                 break;
             case 13:
                 result = exp(num1);
+                break;
+            case 14:
+                result = acos(num1);
+                result = result * (180/M_PI);
+                break;
+            case 15:
+                result = asin(num1);
+                result = result * (180/M_PI);
+                break;
+            case 16:
+                result = atan(num1);
+                result = result * (180/M_PI);
+                break;
+            case 17:
+                result = hypot(num1, num2);
                 break;
             case 0:
                 valido = false;

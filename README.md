@@ -1,21 +1,19 @@
-# 🧮 Calculadora Científica em C
+*Calculadora Científica em C*
 
 Este projeto é uma **calculadora científica** desenvolvida em linguagem **C**.  
 Ela roda no terminal e oferece operações matemáticas básicas e avançadas.
 
----
-
-## 📜 O que o programa faz
+*O que o programa faz*
 O usuário escolhe, através de um menu interativo, qual operação deseja realizar.  
 As operações disponíveis incluem:
 
-### Operações Básicas
+*Operações Básicas*
 - **1** – Somar  
 - **2** – Subtrair  
 - **3** – Multiplicar  
 - **4** – Dividir  
 
-### Operações Avançadas
+*Operações Avançadas*
 - **5** – Exponenciação (potência)  
 - **6** – Raiz Quadrada  
 - **7** – Raiz Cúbica  
@@ -28,24 +26,20 @@ As operações disponíveis incluem:
 
 O programa permanece em execução até que o usuário escolha **0** para sair.
 
----
 
-## 💻 Tecnologias Utilizadas
+*Tecnologias Utilizadas*
 - **Linguagem:** C  
 - **Bibliotecas padrão:**  
   - `stdio.h` (entrada/saída)  
   - `stdbool.h` (variáveis booleanas)  
   - `math.h` (funções matemáticas)  
 
----
-
-## ⚙️ Como Compilar e Executar
-
-### Requisitos
+*Como Compilar e Executar*
+Requisitos
 - Compilador C (por exemplo **GCC**)
 - Terminal ou Prompt de Comando
 
-### Passos
+Passos
 1. **Clone este repositório**:
    ```bash
    git clone https://github.com/grazixzdev/Calculadora--C.git
@@ -58,16 +52,14 @@ O programa permanece em execução até que o usuário escolha **0** para sair.
    ```bash
    gcc main.c -o calculadora -lm
    ```
-   > ⚠️ **Importante:** a flag `-lm` é necessária para linkar a biblioteca matemática `math.h`.
+   > **Importante:** a flag `-lm` é necessária para linkar a biblioteca matemática `math.h`.
 
 4. **Execute o programa**:
    ```bash
    ./calculadora
    ```
 
----
-
-## 🧩 Exemplo de Uso
+*Exemplo de Uso*
 
 ```
 | 1 - Somar
@@ -92,12 +84,9 @@ Digite o segundo número:
 O resultado é: 15.000000
 ```
 
----
 
-## ℹ️ Informações Adicionais
+*Informações Adicionais:*
 - **Autores:** grazixzdev, amandamrs e italodf  
 - **Licença:** MIT 
 - O programa realiza verificações básicas, como divisão por zero e expoentes inválidos.  
 - Possíveis melhorias: tratamento de erros mais robusto, suporte a cálculos em sequência, interface mais amigável.
-
----

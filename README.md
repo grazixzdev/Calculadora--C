@@ -1,89 +1,77 @@
-*Calculadora Científica em C*
+*Calculadora Científica em C:*🎨🔢
+Este projeto é uma calculadora científica robusta desenvolvida em linguagem C. Ela opera no terminal, oferecendo uma ampla gama de operações matemáticas, desde as mais básicas até as mais avançadas.
 
-Este projeto é uma **calculadora científica** desenvolvida em linguagem **C**.  
-Ela roda no terminal e oferece operações matemáticas básicas e avançadas.
+O que o programa faz
+O usuário interage com um menu no terminal para escolher qual operação deseja realizar. O programa aceita um ou dois números, dependendo da operação, e exibe o resultado. Ele continua em execução até que o usuário decida sair.
 
-*O que o programa faz:*
-O usuário escolhe, através de um menu interativo, qual operação deseja realizar.  
-As operações disponíveis incluem:
+Operações Disponíveis
+O programa oferece as seguintes funcionalidades:
 
-*Operações Básicas:*
-- **1** – Somar  
-- **2** – Subtrair  
-- **3** – Multiplicar  
-- **4** – Dividir  
+*Operações com dois números:*
 
-*Operações Avançadas:*
-- **5** – Exponenciação (potência)  
-- **6** – Raiz Quadrada  
-- **7** – Raiz Cúbica  
-- **8** – Cosseno (graus)  
-- **9** – Seno (graus)  
-- **10** – Tangente (graus)  
-- **11** – Logaritmo na Base 10  
-- **12** – Logaritmo Natural (base *e*)  
-- **13** – Constante de Euler (função `exp`)  
+1 – Somar
+2 – Subtrair
+3 – Multiplicar
+4 – Dividir
+5 – Exponenciação (Potência)
+17 – Hipotenusa
 
-O programa permanece em execução até que o usuário escolha **0** para sair.
+*Operações com um número:*
 
+6 – Raiz Quadrada
+7 – Raiz Cúbica
+8 – Cosseno
+9 – Seno
+10 – Tangente
+11 – Logaritmo na Base 10
+12 – Logaritmo Natural
+13 – Constante de Euler (função exp)
+14 – Arco-Cosseno
+15 – Arco-Seno
+16 – Arco-Tangente
+18 – Seno Hiperbólico
+19 – Cosseno Hiperbólico
+20 – Tangente Hiperbólica
 
-*Tecnologias Utilizadas:*
-- **Linguagem:** C  
-- **Bibliotecas padrão:**  
-  - `stdio.h` (entrada/saída)  
-  - `stdbool.h` (variáveis booleanas)  
-  - `math.h` (funções matemáticas)  
+*Para sair do programa, basta digitar 0.*
 
-*Como Compilar e Executar:*
-Requisitos:
-- Compilador C (por exemplo **GCC**)
-- Terminal ou Prompt de Comando
+*Tecnologia Utilizada:*
+Linguagem: C
 
-Passos:
-1. **Clone este repositório**:
-   ```bash
-   git clone https://github.com/grazixzdev/Calculadora--C.git
-   ```
-2. **Entre na pasta do projeto**:
-   ```bash
-   cd Calculadora--C
-   ```
-3. **Compile o código**:
-   ```bash
-   gcc main.c -o calculadora -lm
-   ```
-   > **Importante:** a flag `-lm` é necessária para linkar a biblioteca matemática `math.h`.
+*Bibliotecas Padrão:*
+stdio.h (entrada e saída)
+stdbool.h (variáveis booleanas)
+math.h (funções matemáticas)
 
-4. **Execute o programa**:
-   ```bash
-   ./calculadora
-   ```
+*Como Compilar e Executar*
+_Requisitos_
+Um compilador C (como o GCC)
+Terminal ou Prompt de Comando
 
-*Exemplo de Uso:*
+Passos
+Clone o repositório:
 
-```
+git clone https://github.com/grazixzdev/Calculadora--C.git
+Acesse a pasta do projeto:
+
+cd Calculadora--C
+Compile o código:
+
+gcc main.c -o calculadora -lm
+Importante: A flag -lm é essencial para vincular a biblioteca matemática math.h.
+
+Execute o programa:
+
+./calculadora
+Exemplo de Uso
+Ao executar o programa, você verá o menu de opções.
+
 | 1 - Somar
 | 2 - Subtrair
 | 3 - Multiplicar
-| 4 - Dividir
-| 5 - Exponenciação
-| ...
+...
 | 0 - Sair
 | Digite sua escolha:
-```
-
-*Exemplo prático:*
-```
-Digite sua escolha:
-1
-Digite o primeiro número:
-10
-Digite o segundo número:
-5
-
-O resultado é: 15.000000
-```
-
 
 *Informações Adicionais:*
 - **Autores:** grazixzdev, amandamrs e italodf  

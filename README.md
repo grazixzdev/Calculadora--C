@@ -1,4 +1,5 @@
 *Calculadora Científica em C:*🎨🔢
+
 Este projeto é uma calculadora científica robusta desenvolvida em linguagem C. Ela opera no terminal, oferecendo uma ampla gama de operações matemáticas, desde as mais básicas até as mais avançadas.
 
 O que o programa faz

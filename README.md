@@ -2,36 +2,53 @@
 
 Este projeto é uma calculadora científica robusta desenvolvida em linguagem C. Ela opera no terminal, oferecendo uma ampla gama de operações matemáticas, desde as mais básicas até as mais avançadas.
 
-O que o programa faz
+O que o programa faz:
+
 O usuário interage com um menu no terminal para escolher qual operação deseja realizar. O programa aceita um ou dois números, dependendo da operação, e exibe o resultado. Ele continua em execução até que o usuário decida sair.
 
-Operações Disponíveis
-O programa oferece as seguintes funcionalidades:
+Operações Disponíveis:
 
 *Operações com dois números:*
 
 1 – Somar
+
 2 – Subtrair
+
 3 – Multiplicar
 4 – Dividir
+
 5 – Exponenciação (Potência)
+
 17 – Hipotenusa
 
 *Operações com um número:*
 
 6 – Raiz Quadrada
+
 7 – Raiz Cúbica
+
 8 – Cosseno
+
 9 – Seno
+
 10 – Tangente
+
 11 – Logaritmo na Base 10
+
 12 – Logaritmo Natural
+
 13 – Constante de Euler (função exp)
+
 14 – Arco-Cosseno
+
 15 – Arco-Seno
+
 16 – Arco-Tangente
+
 18 – Seno Hiperbólico
+
 19 – Cosseno Hiperbólico
+
 20 – Tangente Hiperbólica
 
 *Para sair do programa, basta digitar 0.*

@@ -17,7 +17,8 @@ int main()
            "\n| 8 - Cosseno\n| 9 - Seno\n| 10 - Tangente"
            "\n| 11 - Logaritmo na Base 10\n| 12 - Logaritmo Natural\n| 13 - Constante de Euler"
            "\n| 14 - Arco-Cosseno\n| 15 - Arco-Seno\n| 16 - Arco-Tangente"
-           "\n| 17 - Hipotenusa"
+           "\n| 17 - Hipotenusa\n| 18 - Seno Hiperbolico\n| 19 - Cosseno Hiperbolico"
+           "\n| 20 - Tangente Hiperbolico"
            "\n| 0 - Sair"
            "\n| Digite sua escolha:\n");
         scanf("%d", &escolha);
@@ -113,6 +114,15 @@ int main()
                 break;
             case 17:
                 result = hypot(num1, num2);
+                break;
+            case 18:
+                result = sinh(num1);
+                break;
+            case 19:
+                result = cosh(num1);
+                break;
+            case 20:
+                result = tanh(num1);
                 break;
             case 0:
                 valido = false;

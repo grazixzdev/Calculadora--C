@@ -12,13 +12,16 @@ int main()
     bool sair = false;
     
     while (escolha != 0) {
-        printf("\n| 1 - Somar\n| 2 - Subtrair\n| 3 - Multiplicar\n| 4 - Dividir" 
-           "\n| 5 - Exponenciação\n| 6 - Raiz Quadrada\n| 7 - Raiz Cúbica"
-           "\n| 8 - Cosseno\n| 9 - Seno\n| 10 - Tangente"
-           "\n| 11 - Logaritmo na Base 10\n| 12 - Logaritmo Natural\n| 13 - Constante de Euler"
-           "\n| 14 - Arco-Cosseno\n| 15 - Arco-Seno\n| 16 - Arco-Tangente"
-           "\n| 17 - Hipotenusa\n| 18 - Seno Hiperbolico\n| 19 - Cosseno Hiperbolico"
-           "\n| 20 - Tangente Hiperbolico"
+        printf("\n| 1 - Somar\n| 2 - Subtrair\n| 3 - Multiplicar\n| 4 - Dividir (Primeiro Número: Dividendo | Segundo Número: Divisor)" 
+           "\n| 5 - Exponenciação (Primeiro Número: Base | Segundo Número: Expoente)"
+           "\n| 6 - Raiz Quadrada (Primeiro Número: Radicando)\n| 7 - Raiz Cúbica (O Número representa o Radicando)"
+           "\n| 8 - Cosseno (Número em graus)\n| 9 - Seno (Número em graus)\n| 10 - Tangente (Número em graus)"
+           "\n| 11 - Logaritmo na Base 10 (Primeiro Número: Logaritmando) \n| 12 - Logaritmo Natural (Primeiro Número: Logaritmando)"
+           "\n| 13 - Constante de Euler (Digite um Número para obter a Constante)"
+           "\n| 14 - Arco-Cosseno (Número em graus(entre -1 e 1))\n| 15 - Arco-Seno (Número em graus(entre -1 e 1))\n| 16 - Arco-Tangente (Número em graus(entre -1 e 1))"
+           "\n| 17 - Hipotenusa(Primeiro Número: Cateto Oposto | Segundo Número: Cateto Adjacente)"
+           "\n| 18 - Seno Hiperbolico (Primeiro Número: Variável)\n| 19 - Cosseno Hiperbolico (Primeiro Número: Variável)"
+           "\n| 20 - Tangente Hiperbolico (Primeiro Número: Variável)"
            "\n| 0 - Sair"
            "\n| Digite sua escolha:\n");
         scanf("%d", &escolha);

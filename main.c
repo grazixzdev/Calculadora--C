@@ -5,8 +5,7 @@
 int main()
 {
     int escolha = -1;
-    float num1;
-    float num2;
+    float numeros[100];
     float result;
     bool valido = true;
     bool sair = false;
@@ -28,104 +27,104 @@ int main()
         
         if (escolha != 0) {
             printf("\nDigite o primeiro número:\n");
-            scanf("%f", &num1);
+            scanf("%f", &numeros[0]);
             
             if (escolha < 6 || escolha == 17) {
                 printf("Digite o segundo número:\n");
-                scanf("%f", &num2);
+                scanf("%f", &numeros[1]);
             }
         }
     
         switch (escolha) {
             case 1:
-                result = num1 + num2;
+                result = numeros[0] + numeros[1];
                 break;
             case 2:
-                result = num1 - num2;
+                result = numeros[0] - numeros[1];
                 break;
             case 3:
-                result = num1 * num2;
-                if (num2 == 0) {
+                result = numeros[0] * numeros[1];
+                if (numeros[1] == 0) {
                     printf("Não é possível multiplicar para 0!");
                     valido = false;
                 }
                 break;
             case 4:
-                result = num1 / num2;
-                if (num2 == 0) {
+                result = numeros[0] / numeros[1];
+                if (numeros[1] == 0) {
                     printf("Não é possível dividir para 0!");
                     valido = false;
                 }
                 break;
             case 5:
                 //result = pow(num1, num2);
-                result = num1;
-                if (num1 == 0 && num2 == 0) {
+                result = numeros[0];
+                if (numeros[0] == 0 && numeros[1] == 0) {
                     printf("0 elevado a 0 é uma indeterminação!");
                     valido = false;
-                } else if (num2 == 0) {
+                } else if (numeros[1] == 0) {
                     result = 1;                
-                } else if (num2 < 0) {
-                    for (int i = -1; i > num2; i--) {
-                        result *= num1;
+                } else if (numeros[1] < 0) {
+                    for (int i = -1; i > numeros[1]; i--) {
+                        result *= numeros[0];
                     }
                     result = 1 / result;
                 } else {
-                    for (int i = 1; i < num2; i++) {
-                        result *= num1;
+                    for (int i = 1; i < numeros[1]; i++) {
+                        result *= numeros[0];
                     }
                 }
                 break;
             case 6:
-                result = sqrt(num1);
+                result = sqrt(numeros[0]);
                 break;
             case 7:
-                result = cbrt(num1);
+                result = cbrt(numeros[0]);
                 break;
             case 8:
-                result = num1 * (M_PI/180);
+                result = numeros[0] * (M_PI/180);
                 result = cos(result);
                 break;
             case 9:
-                result = num1 * (M_PI/180);
+                result = numeros[0] * (M_PI/180);
                 result = sin(result);
                 break;
             case 10:
-                result = num1 * (M_PI/180);
+                result = numeros[0] * (M_PI/180);
                 result = tan(result);
                 break;
             case 11:
-                result = log10(num1);
+                result = log10(numeros[0]);
                 break;
             case 12:
-                result = log(num1);
+                result = log(numeros[0]);
                 break;
             case 13:
-                result = exp(num1);
+                result = exp(numeros[0]);
                 break;
             case 14:
-                result = acos(num1);
+                result = acos(numeros[0]);
                 result = result * (180/M_PI);
                 break;
             case 15:
-                result = asin(num1);
+                result = asin(numeros[0]);
                 result = result * (180/M_PI);
                 break;
             case 16:
-                result = atan(num1);
+                result = atan(numeros[0]);
                 result = result * (180/M_PI);
                 break;
             case 17:
-                result = hypot(num1, num2);
+                result = hypot(numeros[0], numeros[1]);
                 break;
             case 18:
-                result = sinh(num1);
+                result = sinh(numeros[0]);
                 break;
             case 19:
-                result = cosh(num1);
+                result = cosh(numeros[0]);
                 break;
             case 20:
-                result = tanh(num1);
+                result = tanh(numeros[0]);
                 break;
             case 0:
                 valido = false;

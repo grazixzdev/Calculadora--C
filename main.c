@@ -2,16 +2,8 @@
 #include <stdbool.h>
 #include <math.h>
 
-int main()
-{
-    int escolha = -1;
-    float numeros[100];
-    float result;
-    bool valido = true;
-    bool sair = false;
-    
-    while (escolha != 0) {
-        printf("\n| 1 - Somar\n| 2 - Subtrair\n| 3 - Multiplicar\n| 4 - Dividir (Primeiro Número: Dividendo | Segundo Número: Divisor)" 
+void menu() {
+    printf("\n| 1 - Somar\n| 2 - Subtrair\n| 3 - Multiplicar\n| 4 - Dividir (Primeiro Número: Dividendo | Segundo Número: Divisor)" 
            "\n| 5 - Exponenciação (Primeiro Número: Base | Segundo Número: Expoente)"
            "\n| 6 - Raiz Quadrada (Primeiro Número: Radicando)\n| 7 - Raiz Cúbica (O Número representa o Radicando)"
            "\n| 8 - Cosseno (Número em graus)\n| 9 - Seno (Número em graus)\n| 10 - Tangente (Número em graus)"
@@ -23,6 +15,18 @@ int main()
            "\n| 20 - Tangente Hiperbolico (Primeiro Número: Variável)"
            "\n| 0 - Sair"
            "\n| Digite sua escolha:\n");
+}
+
+int main()
+{
+    int escolha = -1;
+    float numeros[100];
+    float result;
+    bool valido = true;
+    bool sair = false;
+    
+    while (escolha != 0) {
+        menu();
         scanf("%d", &escolha);
         
         if (escolha != 0) {

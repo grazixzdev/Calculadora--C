@@ -17,15 +17,87 @@ void menu() {
            "\n| Digite sua escolha:\n");
 }
 
+float somar(float n1, float n2) {
+    return n1 + n2;
+}
+
+float subtrair(float n1, float n2) {
+    return n1 - n2;
+}
+
+float multiplicar(float n1, float n2) {
+    if (n2 != 0) {
+        return n1 * n2;    
+    } else {
+        printf("\nNão é possível multiplicar para 0!\n");
+        return NAN;   
+    }
+}
+
+float dividir(float n1, float n2) {
+    if (n2 != 0) {
+        return n1 / n2;
+    } else {
+         printf("\nNão é possível dividir para 0!\n");
+        return NAN;
+    }
+}
+
+float exponenciar(float n1, float n2) {
+  //result = pow(num1, num2);
+    float result = 0;
+    if (n1 == 0 && n2 == 0) {
+        printf("0 elevado a 0 é uma indeterminação!");
+        return NAN;
+    } else if (n2 == 0) {
+        return 1;                
+    } else if (n2 < 0) {
+        for (int i = -1; i > n2; i--) {
+            result *= n1;
+        }
+        result = 1 / result;
+        return result;
+    } else {
+        for (int i = 1; i < n2; i++) {
+            result *= n1;
+        }
+        return result;
+    }    
+}
+
+float raizQuadrada(float n1) {
+    return sqrt(n1);
+}
+
+float raizCubica(float n1) {
+    return cbrt(n1);
+}
+
+float cosseno(float n1) {
+    float result = n1 * (M_PI/180);
+    return cos(result);
+}
+
+float seno(float n1) {
+    float result = n1 * (M_PI/180);
+    return sin(result);
+}
+
+float tangente(float n1) {
+    float result = n1 * (M_PI/180);
+    return tan(result);
+}
+
 int main()
 {
     int escolha = -1;
     float numeros[100];
     float result;
-    bool valido = true;
+    bool valido;
     bool sair = false;
     
     while (escolha != 0) {
+        valido = true;
         menu();
         scanf("%d", &escolha);
         
@@ -41,61 +113,43 @@ int main()
     
         switch (escolha) {
             case 1:
-                result = numeros[0] + numeros[1];
+                result = somar(numeros[0], numeros[1]);
                 break;
             case 2:
-                result = numeros[0] - numeros[1];
+                result = subtrair(numeros[0], numeros[1]);
                 break;
             case 3:
-                result = numeros[0] * numeros[1];
-                if (numeros[1] == 0) {
-                    printf("Não é possível multiplicar para 0!");
+                result = multiplicar(numeros[0], numeros[1]);
+                if (isnan(result)) {
                     valido = false;
                 }
                 break;
             case 4:
-                result = numeros[0] / numeros[1];
-                if (numeros[1] == 0) {
-                    printf("Não é possível dividir para 0!");
+                result = dividir(numeros[0], numeros[1]);
+                if (isnan(result)) {
                     valido = false;
                 }
                 break;
             case 5:
-                //result = pow(num1, num2);
-                result = numeros[0];
-                if (numeros[0] == 0 && numeros[1] == 0) {
-                    printf("0 elevado a 0 é uma indeterminação!");
+                result = exponenciar(numeros[0], numeros[1]);
+                if (isnan(result)) {
                     valido = false;
-                } else if (numeros[1] == 0) {
-                    result = 1;                
-                } else if (numeros[1] < 0) {
-                    for (int i = -1; i > numeros[1]; i--) {
-                        result *= numeros[0];
-                    }
-                    result = 1 / result;
-                } else {
-                    for (int i = 1; i < numeros[1]; i++) {
-                        result *= numeros[0];
-                    }
                 }
                 break;
             case 6:
-                result = sqrt(numeros[0]);
+                result = raizQuadrada(numeros[0]);
                 break;
             case 7:
-                result = cbrt(numeros[0]);
+                result = raizCubica(numeros[0]);
                 break;
             case 8:
-                result = numeros[0] * (M_PI/180);
-                result = cos(result);
+                result = cosseno(numeros[0]);
                 break;
             case 9:
-                result = numeros[0] * (M_PI/180);
-                result = sin(result);
+                result = seno(numeros[0]);
                 break;
             case 10:
-                result = numeros[0] * (M_PI/180);
-                result = tan(result);
+                result = tangente(numeros[0]);
                 break;
             case 11:
                 result = log10(numeros[0]);

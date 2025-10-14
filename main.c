@@ -88,6 +88,14 @@ float tangente(float n1) {
     return tan(result);
 }
 
+float logaritmo10(float n1) { 
+    return log10(n1);
+}
+
+float logaritmo(float n1) { 
+    return log(n1);
+}
+
 int main()
 {
     int escolha = -1;
@@ -152,10 +160,10 @@ int main()
                 result = tangente(numeros[0]);
                 break;
             case 11:
-                result = log10(numeros[0]);
+                result = logaritmo10(numeros[0]);
                 break;
             case 12:
-                result = log(numeros[0]);
+                result = logaritmo(numeros[0]);
                 break;
             case 13:
                 result = exp(numeros[0]);

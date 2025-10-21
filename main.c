@@ -96,6 +96,25 @@ float logaritmo(float n1) {
     return log(n1);
 }
 
+float euler(float n1) {
+    return exp(n1);
+}
+
+float arcoCosseno(float n1){
+    float result = n1 * (180/M_PI);
+    return acos(n1);
+}
+
+float arcoSeno(float n1){
+    float result = n1 * (180/M_PI);
+    return asin(n1);
+}
+
+float arcoTangente(float n1){
+    float result = n1 * (180/M_PI);
+    return atan(n1);
+}
+
 int main()
 {
     int escolha = -1;
@@ -166,19 +185,16 @@ int main()
                 result = logaritmo(numeros[0]);
                 break;
             case 13:
-                result = exp(numeros[0]);
+                result = euler(numeros[0]);
                 break;
             case 14:
-                result = acos(numeros[0]);
-                result = result * (180/M_PI);
+                result = arcoCosseno(numeros[0]);
                 break;
             case 15:
-                result = asin(numeros[0]);
-                result = result * (180/M_PI);
+                result = arcoSeno(numeros[0]);
                 break;
             case 16:
-                result = atan(numeros[0]);
-                result = result * (180/M_PI);
+                result = arcoTangente(numeros[0]);
                 break;
             case 17:
                 result = hypot(numeros[0], numeros[1]);

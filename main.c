@@ -45,8 +45,9 @@ float dividir(float n1, float n2) {
 }
 
 float exponenciar(float n1, float n2) {
-  //result = pow(num1, num2);
-    float result = 0;
+    float result;
+    result = pow(n1, n2);
+    /*float result = 0;
     if (n1 == 0 && n2 == 0) {
         printf("0 elevado a 0 é uma indeterminação!");
         return NAN;
@@ -61,9 +62,11 @@ float exponenciar(float n1, float n2) {
     } else {
         for (int i = 1; i < n2; i++) {
             result *= n1;
+            printf("result:%f",result);
         }
         return result;
-    }    
+    }*/ 
+    return result;
 }
 
 float raizQuadrada(float n1) {

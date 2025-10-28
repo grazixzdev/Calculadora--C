@@ -2,6 +2,7 @@
 #include <stdbool.h>
 #include <math.h>
 
+
 void menu() {
     printf("\n| 1 - Somar\n| 2 - Subtrair\n| 3 - Multiplicar\n| 4 - Dividir (Primeiro Número: Dividendo | Segundo Número: Divisor)" 
            "\n| 5 - Exponenciação (Primeiro Número: Base | Segundo Número: Expoente)"
@@ -13,8 +14,9 @@ void menu() {
            "\n| 17 - Hipotenusa(Primeiro Número: Cateto Oposto | Segundo Número: Cateto Adjacente)"
            "\n| 18 - Seno Hiperbolico (Primeiro Número: Variável)\n| 19 - Cosseno Hiperbolico (Primeiro Número: Variável)"
            "\n| 20 - Tangente Hiperbolico (Primeiro Número: Variável)"
+           "\n| 21 - Historico"
            "\n| 0 - Sair"
-           "\n| Digite sua escolha:\n");
+           "\n| Digite sua escolha: ");
 }
 
 float somar(float n1, float n2) {
@@ -115,112 +117,172 @@ float arcoTangente(float n1){
     return atan(n1);
 }
 
+struct historico {
+    float n1;
+    float n2;
+    float result;
+    int utilizado;
+    char * tipo;
+};
+
 int main()
 {
+    struct historico hist[100];
     int escolha = -1;
     float numeros[100];
     float result;
     bool valido;
     bool sair = false;
+    int a = 0;
+    
     
     while (escolha != 0) {
         valido = true;
         menu();
         scanf("%d", &escolha);
         
-        if (escolha != 0) {
-            printf("\nDigite o primeiro número:\n");
-            scanf("%f", &numeros[0]);
-            
-            if (escolha < 6 || escolha == 17) {
-                printf("Digite o segundo número:\n");
-                scanf("%f", &numeros[1]);
+        if (escolha < 21 && escolha > 0) {
+            if (escolha != 0) {
+                printf("\nDigite o primeiro número:\n");
+                scanf("%f", &numeros[0]);
+                hist[a].n1 = numeros[0];
+                
+                
+                if (escolha < 6 || escolha == 17) {
+                    printf("Digite o segundo número:\n");
+                    scanf("%f", &numeros[1]);
+                    hist[a].n2 = numeros[1];
+                    hist[a].utilizado = 1;
+                } else {
+                    hist[a].utilizado = 0;
+                }
             }
         }
-    
+        
         switch (escolha) {
             case 1:
                 result = somar(numeros[0], numeros[1]);
+                hist[a].tipo = "soma";
                 break;
             case 2:
                 result = subtrair(numeros[0], numeros[1]);
+                hist[a].tipo = "subtração";
                 break;
             case 3:
                 result = multiplicar(numeros[0], numeros[1]);
+                hist[a].tipo = "multiplicação";
                 if (isnan(result)) {
                     valido = false;
                 }
                 break;
             case 4:
                 result = dividir(numeros[0], numeros[1]);
+                hist[a].tipo = "divisão";
                 if (isnan(result)) {
                     valido = false;
                 }
                 break;
             case 5:
                 result = exponenciar(numeros[0], numeros[1]);
+                hist[a].tipo = "exponenciação";
                 if (isnan(result)) {
                     valido = false;
                 }
                 break;
             case 6:
                 result = raizQuadrada(numeros[0]);
+                hist[a].tipo = "raiz quadrada";
                 break;
             case 7:
                 result = raizCubica(numeros[0]);
+                hist[a].tipo = "raiz cubica";
                 break;
             case 8:
                 result = cosseno(numeros[0]);
+                hist[a].tipo = "cosseno";
                 break;
             case 9:
                 result = seno(numeros[0]);
+                hist[a].tipo = "seno";
                 break;
             case 10:
                 result = tangente(numeros[0]);
+                hist[a].tipo = "tangente";
                 break;
             case 11:
                 result = logaritmo10(numeros[0]);
+                hist[a].tipo = "logaritmo na base 10";
                 break;
             case 12:
                 result = logaritmo(numeros[0]);
+                hist[a].tipo = "logaritimo";
                 break;
             case 13:
                 result = euler(numeros[0]);
+                hist[a].tipo = "constante de euler";
                 break;
             case 14:
                 result = arcoCosseno(numeros[0]);
+                hist[a].tipo = "arco de cosseno";
                 break;
             case 15:
                 result = arcoSeno(numeros[0]);
+                hist[a].tipo = "arco de seno";
                 break;
             case 16:
                 result = arcoTangente(numeros[0]);
+                hist[a].tipo = "arco de tangente";
                 break;
             case 17:
                 result = hypot(numeros[0], numeros[1]);
+                hist[a].tipo = "hypotenusa";
                 break;
             case 18:
                 result = sinh(numeros[0]);
+                hist[a].tipo = "seno hiperbolico";
                 break;
             case 19:
                 result = cosh(numeros[0]);
+                hist[a].tipo = "cosseno hiperbolico";
                 break;
             case 20:
                 result = tanh(numeros[0]);
+                hist[a].tipo = "tangente hiperbolico";
+                break;
+            case 21:
+                for (int i = 0; i != a; i++) {
+                    printf("\n| id do historico:%i", i + 1);
+                    printf("\n| tipo de operação:%s", hist[i].tipo);
+                    printf("\n| primeiro número:%f", hist[i].n1);
+                    if (hist[i].utilizado == 1) {
+                        printf("\n| segundo número:%f", hist[i].n2);
+                    }
+                    printf("\n| resultado:%f \n \n", hist[i].result);
+                }
+                valido = false;
                 break;
             case 0:
                 valido = false;
                 printf("\nSaindo...");
                 break;
             default:
-                printf("Escolha Indisponível!");
+                printf("\nEscolha Indisponível!\n");
                 valido = false;
                 break;
         }
         
+        
+        
         if (valido) {
             printf("\nO resultado é: %f\n", result);
+            hist[a].result = result;
+            a += 1;
+            
         }
+        
+        printf("\nPressione Enter para continuar...\n");
+        while (getchar() != '\n');
+        getchar();
     }
     return 0;
 }

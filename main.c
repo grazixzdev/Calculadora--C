@@ -47,25 +47,6 @@ float dividir(float n1, float n2) {
 float exponenciar(float n1, float n2) {
     float result;
     result = pow(n1, n2);
-    /*float result = 0;
-    if (n1 == 0 && n2 == 0) {
-        printf("0 elevado a 0 é uma indeterminação!");
-        return NAN;
-    } else if (n2 == 0) {
-        return 1;                
-    } else if (n2 < 0) {
-        for (int i = -1; i > n2; i--) {
-            result *= n1;
-        }
-        result = 1 / result;
-        return result;
-    } else {
-        for (int i = 1; i < n2; i++) {
-            result *= n1;
-            printf("result:%f",result);
-        }
-        return result;
-    }*/ 
     return result;
 }
 
